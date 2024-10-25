@@ -1,0 +1,8 @@
+{
+  "sepolia": {
+    "EtherSender": {
+      "address": "0x4D262FE58631be2861ef7F81eF156788D969b239",
+      "startBlock": 6858374
+    }
+  }
+}

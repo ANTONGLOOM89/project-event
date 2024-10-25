@@ -1,0 +1,26 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: EtherSender
+    network: sepolia
+    source:
+      address: "0x4D262FE58631be2861ef7F81eF156788D969b239"
+      abi: EtherSender
+      startBlock: 6858374
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - EtherSent
+      abis:
+        - name: EtherSender
+          file: ./abis/EtherSender.json
+      eventHandlers:
+        - event: EtherSent(indexed address,indexed address,uint256)
+          handler: handleEtherSent
+      file: ./src/ether-sender.ts
